@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .registration-card {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            border-radius: 1rem;
+        }
+        .form-header {
+            background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+            color: white;
+            border-radius: 1rem 1rem 0 0;
+            padding: 1.5rem;
+        }
+        .password-requirements {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        .btn-register {
+            background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+            border: none;
+            padding: 0.75rem;
+            font-weight: 600;
+        }
+        .btn-register:hover {
+            background: linear-gradient(135deg, #0a58ca 0%, #084298 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card registration-card">
+                    <div class="form-header text-center">
+                        <h2><i class="bi bi-person-plus-fill me-2"></i>Registro de Usuario</h2>
+                        <p class="mb-0">Complete el formulario para crear una cuenta</p>
+                    </div>
+                    <div class="card-body p-4">
+                        <form>
+                            <!-- Información Personal -->
+                            <h5 class="mb-3 mt-2 text-primary"><i class="bi bi-person-circle me-2"></i>Información Personal</h5>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Apellido</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                    <input type="email" class="form-control" id="email" placeholder="usuario@ejemplo.com" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Teléfono</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                                    <input type="tel" class="form-control" id="phone" placeholder="+34 123 456 789">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="birthDate" class="form-label">Fecha de Nacimiento</label>
+                                <input type="date" class="form-control" id="birthDate">
+                            </div>
+                            
+                            <hr class="my-4">
+                            
+                            <!-- Credenciales de Acceso -->
+                            <h5 class="mb-3 text-primary"><i class="bi bi-shield-lock me-2"></i>Credenciales de Acceso</h5>
+                            
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Nombre de Usuario</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
+                                    <input type="text" class="form-control" id="username" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-key"></i></span>
+                                    <input type="password" class="form-control" id="password" required>
+                                    <button class="btn btn-outline-secondary toggle-password" type="button">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="password-requirements mt-2">
+                                    <p class="mb-1">La contraseña debe contener:</p>
+                                    <ul class="list-unstyled ms-3">
+                                        <li><i class="bi bi-check-circle text-success"></i> Al menos 8 caracteres</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Una letra mayúscula</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Un número</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Un carácter especial</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+                                    <input type="password" class="form-control" id="confirmPassword" required>
+                                </div>
+                            </div>
+                            
+                            <hr class="my-4">
+                            
+                            <!-- Preferencias -->
+                            <h5 class="mb-3 text-primary"><i class="bi bi-gear me-2"></i>Preferencias</h5>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Tipo de Cuenta</label>
+                                <div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="accountType" id="personal" value="personal" checked>
+                                        <label class="form-check-label" for="personal">Personal</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="accountType" id="business" value="business">
+                                        <label class="form-check-label" for="business">Empresarial</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="newsletter" class="form-check-label">¿Desea recibir nuestro boletín informativo?</label>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="newsletter" checked>
+                                    <label class="form-check-label" for="newsletter">Sí, deseo recibir noticias y ofertas</label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">Acepto los <a href="#" class="text-decoration-none">términos y condiciones</a> y la <a href="#" class="text-decoration-none">política de privacidad</a></label>
+                            </div>
+                            
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-lg btn-register">Crear Cuenta</button>
+                            </div>
+                            
+                            <div class="text-center mt-3">
+                                <p>¿Ya tiene una cuenta? <a href="#" class="text-decoration-none">Iniciar Sesión</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Funcionalidad para mostrar/ocultar contraseña
+        document.querySelectorAll('.toggle-password').forEach(button => {
+            button.addEventListener('click', function() {
+                const passwordInput = this.previousElementSibling;
+                const icon = this.querySelector('i');
+                
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    icon.classList.remove('bi-eye');
+                    icon.classList.add('bi-eye-slash');
+                } else {
+                    passwordInput.type = 'password';
+                    icon.classList.remove('bi-eye-slash');
+                    icon.classList.add('bi-eye');
+                }
+            });
+        });
+
+        // Validación básica del formulario
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                alert('Las contraseñas no coinciden. Por favor, verifique.');
+            }
+            
+            // Aquí se pueden agregar más validaciones según sea necesario
+        });
+    </script>
+</body>
+</html>
